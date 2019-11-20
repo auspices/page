@@ -1,0 +1,9 @@
+overwrite: true
+schema: "https://atlas.auspic.es/graphql"
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "fragment-matcher"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
