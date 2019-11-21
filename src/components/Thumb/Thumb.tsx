@@ -7,9 +7,11 @@ import { Base as Button } from "../Button";
 
 const Container = styled(Button)`
   display: block;
-  width: 100%;
-  height: 100%;
   cursor: zoom-in;
+
+  &:focus {
+    outline: 0;
+  }
 `;
 
 interface Props extends ImageProps {}
@@ -64,7 +66,10 @@ export const Thumb: React.FC<Props> = ({
 
   return (
     <>
-      <Container onClick={handleClick}>
+      <Container
+        onClick={handleClick}
+        style={{ width: `${width}px`, height: `${height}px` }}
+      >
         <Image
           responsive={false}
           width={width as number}

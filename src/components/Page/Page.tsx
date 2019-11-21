@@ -61,14 +61,15 @@ const Container = styled.div`
 
 const Entity = styled.div<{ size?: string | null }>`
   margin: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   ${({ size }) =>
     size === "thumb" &&
     `
-    width: 25rem;
-    height: 25rem;
     display: inline-flex;
-    margin: 1rem;
+    margin: 1rem 1rem 2rem 1rem;
   `}
 `;
 
