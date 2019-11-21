@@ -75,27 +75,48 @@ const Entity = styled.div<{ size?: string | null }>`
 `;
 
 export const Page: React.FC = () => {
+  const collectionId =
+    window.location.pathname.slice(1) || process.env.REACT_APP_COLLECTION_ID;
+
   const { data, loading, error } = useQuery<PageQuery, PageQueryVariables>(
     PAGE_QUERY,
     {
+      skip: !collectionId,
       variables: {
         userId: `${process.env.REACT_APP_USER_ID}`,
-        collectionId:
-          window.location.pathname.slice(1) ||
-          `${process.env.REACT_APP_COLLECTION_ID}`
+        collectionId: collectionId!
       }
     }
   );
 
   useEffect(() => {
-    if (loading || error) return;
-    document.title = data!.user!.page!.title || data!.user!.page!._title || "";
+    if (loading) {
+      document.title = "Loading";
+      return;
+    }
+
+    if (error) {
+      document.title = "Something went wrong";
+      return;
+    }
+
+    document.title =
+      (data && (data.user!.page!.title || data.user!.page!._title)) || "—";
   }, [data, error, loading]);
 
   if (loading) return <Loading />;
-  if (error) return <div>{error.message}</div>;
+  if (error) return <Container>{error.message}</Container>;
 
-  const page = data!.user!.page!;
+  if (!data) {
+    return (
+      <Container>
+        <em>DOM Space</em> is the set of all web pages that you can express in
+        HTML
+      </Container>
+    );
+  }
+
+  const page = data.user!.page!;
 
   return (
     <Container>
