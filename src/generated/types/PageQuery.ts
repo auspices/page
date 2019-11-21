@@ -74,6 +74,7 @@ export interface PageQuery_user_page_contents {
 
 export interface PageQuery_user_page {
   __typename: "Collection";
+  _title: string;
   title: string | null;
   contents: PageQuery_user_page_contents[] | null;
 }

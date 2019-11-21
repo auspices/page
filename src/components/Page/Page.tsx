@@ -14,6 +14,7 @@ const PAGE_QUERY = gql`
   query PageQuery($userId: ID!, $collectionId: ID!) {
     user(id: $userId) {
       page: collection(id: $collectionId) {
+        _title: title
         title: value(key: "title")
         contents(per: 99) {
           id
@@ -79,14 +80,16 @@ export const Page: React.FC = () => {
     {
       variables: {
         userId: `${process.env.REACT_APP_USER_ID}`,
-        collectionId: `${process.env.REACT_APP_COLLECTION_ID}`
+        collectionId:
+          window.location.pathname.slice(1) ||
+          `${process.env.REACT_APP_COLLECTION_ID}`
       }
     }
   );
 
   useEffect(() => {
     if (loading || error) return;
-    document.title = data!.user!.page!.title || "";
+    document.title = data!.user!.page!.title || data!.user!.page!._title || "";
   }, [data, error, loading]);
 
   if (loading) return <Loading />;
@@ -99,6 +102,7 @@ export const Page: React.FC = () => {
       {page.contents &&
         page.contents.map(content => {
           const { entity } = content;
+
           switch (entity.__typename) {
             case "Image":
               return (
