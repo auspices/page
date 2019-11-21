@@ -1,8 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useCallback, useState } from "react";
 import styled from "styled-components/macro";
 
 import { AspectRatioBox } from "../AspectRatioBox";
 import { useLazyValue } from "../../hooks/useLazyValue";
+
+type Status = "pending" | "ready";
 
 const ResponsiveContainer = styled(AspectRatioBox)`
   position: relative;
@@ -12,11 +14,19 @@ const ResponsiveContainer = styled(AspectRatioBox)`
   background-color: lightgray;
 `;
 
-const Img = styled.img`
+const Img = styled.img<{ status: Status }>`
   display: block;
   margin: 0 auto;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 200ms;
+
+  ${({ status }) =>
+    status === "ready" &&
+    `
+    opacity: 1;
+  `}
 `;
 
 const Caption = styled.h4`
@@ -55,6 +65,9 @@ export const Image: React.FC<Props> = ({
 }) => {
   const ref = useRef<HTMLImageElement>(null);
   const [visible] = useLazyValue(true, ref);
+  const [status, setStatus] = useState<Status>("pending");
+
+  const handleLoad = useCallback(() => setStatus("ready"), []);
 
   return (
     <ResponsiveContainer
@@ -68,10 +81,12 @@ export const Image: React.FC<Props> = ({
       {caption && <Caption>{caption}</Caption>}
 
       <Img
+        status={status}
         ref={ref}
         src={visible ? urls._1x : PENDING_SRC}
         srcSet={visible ? `${urls._1x} 1x, ${urls._2x} 2x` : PENDING_SRC}
         alt={alt}
+        onLoad={handleLoad}
       />
     </ResponsiveContainer>
   );
