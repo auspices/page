@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components/macro";
 
 import { AspectRatioBox } from "../AspectRatioBox";
+import { useLazyValue } from "../../hooks/useLazyValue";
 
 const ResponsiveContainer = styled(AspectRatioBox)`
   position: relative;
@@ -9,11 +10,6 @@ const ResponsiveContainer = styled(AspectRatioBox)`
   background-size: cover;
   background-position: center center;
   background-color: lightgray;
-`;
-
-const Container = styled.div`
-  position: relative;
-  display: inline-flex;
 `;
 
 const Img = styled.img`
@@ -45,6 +41,8 @@ export interface Props {
   fallbackUrl?: string;
 }
 
+const PENDING_SRC = "//:0";
+
 export const Image: React.FC<Props> = ({
   responsive = true,
   height,
@@ -55,7 +53,10 @@ export const Image: React.FC<Props> = ({
   caption,
   ...rest
 }) => {
-  return responsive ? (
+  const ref = useRef<HTMLImageElement>(null);
+  const [visible] = useLazyValue(true, ref);
+
+  return (
     <ResponsiveContainer
       aspectHeight={height}
       aspectWidth={width}
@@ -65,17 +66,13 @@ export const Image: React.FC<Props> = ({
       {...rest}
     >
       {caption && <Caption>{caption}</Caption>}
-      <Img src={urls._1x} srcSet={`${urls._1x} 1x, ${urls._2x} 2x`} alt={alt} />
-    </ResponsiveContainer>
-  ) : (
-    <Container>
+
       <Img
-        src={urls._1x}
-        srcSet={`${urls._1x} 1x, ${urls._2x} 2x`}
+        ref={ref}
+        src={visible ? urls._1x : PENDING_SRC}
+        srcSet={visible ? `${urls._1x} 1x, ${urls._2x} 2x` : PENDING_SRC}
         alt={alt}
-        {...rest}
       />
-      {caption && <Caption>{caption}</Caption>}
-    </Container>
+    </ResponsiveContainer>
   );
 };

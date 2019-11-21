@@ -1,5 +1,5 @@
 {
-  "name": "auspices-page",
+  "name": "@auspices/page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

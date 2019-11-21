@@ -6,6 +6,9 @@ import { Modal } from "../Modal";
 import { Base as Button } from "../Button";
 
 const Container = styled(Button)`
+  display: block;
+  width: 100%;
+  height: 100%;
   cursor: zoom-in;
 `;
 

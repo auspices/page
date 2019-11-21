@@ -65,7 +65,9 @@ const Entity = styled.div<{ size?: string | null }>`
   ${({ size }) =>
     size === "thumb" &&
     `
-    display: inline-block;
+    width: 25rem;
+    height: 25rem;
+    display: inline-flex;
     margin: 1rem;
   `}
 `;
