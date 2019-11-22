@@ -75,7 +75,9 @@ export const Image: React.FC<Props> = ({
       aspectWidth={width}
       maxHeight={height}
       maxWidth={width}
-      style={{ backgroundImage: `url(${fallbackUrl})` }}
+      style={{
+        ...(fallbackUrl ? { backgroundImage: `url(${fallbackUrl})` } : null)
+      }}
       {...rest}
     >
       {caption && <Caption>{caption}</Caption>}

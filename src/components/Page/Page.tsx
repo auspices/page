@@ -71,6 +71,11 @@ const Entity = styled.div<{ size?: string | null }>`
     `
     display: inline-flex;
     margin: 1rem 1rem 2rem 1rem;
+
+    @media (max-width: 30rem) {
+      display: flex;
+      margin: 2rem 0;
+    }
   `}
 `;
 

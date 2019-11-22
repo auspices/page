@@ -1,12 +1,14 @@
-import React, { useCallback, useReducer } from "react";
+import React, { useCallback, useReducer, useEffect } from "react";
 import styled from "styled-components/macro";
 
 import { Image, Props as ImageProps } from "../Image";
 import { Modal } from "../Modal";
 import { Base as Button } from "../Button";
 
-const Container = styled(Button)`
+const Container = styled(Button)<{ width: string; height: string }>`
   display: block;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   cursor: zoom-in;
 
   &:focus {
@@ -23,14 +25,19 @@ enum Mode {
 
 enum Actions {
   Open,
-  Close
+  Close,
+  Resize
 }
 
 interface State {
   mode: Mode;
+  limit: number;
 }
 
-type Action = { type: Actions.Open } | { type: Actions.Close };
+type Action =
+  | { type: Actions.Open }
+  | { type: Actions.Close }
+  | { type: Actions.Resize; payload: { width: number } };
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -38,6 +45,8 @@ const reducer = (state: State, action: Action): State => {
       return { ...state, mode: Mode.Zoomed };
     case Actions.Close:
       return { ...state, mode: Mode.Resting };
+    case Actions.Resize:
+      return { ...state, limit: action.payload.width };
   }
 };
 
@@ -49,7 +58,8 @@ export const Thumb: React.FC<Props> = ({
   ...rest
 }) => {
   const [state, dispatch] = useReducer(reducer, {
-    mode: Mode.Resting
+    mode: Mode.Resting,
+    limit: window.innerWidth
   });
 
   const handleClick = useCallback(
@@ -60,15 +70,26 @@ export const Thumb: React.FC<Props> = ({
     []
   );
 
-  const handleClose = useCallback(() => {
-    dispatch({ type: Actions.Close });
-  }, []);
+  const handleClose = useCallback(() => dispatch({ type: Actions.Close }), []);
+  const handleResize = useCallback(
+    () =>
+      dispatch({ type: Actions.Resize, payload: { width: window.innerWidth } }),
+    []
+  );
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize, { passive: true });
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
   return (
     <>
       <Container
         onClick={handleClick}
-        style={{ width: `${width}px`, height: `${height}px` }}
+        width={state.limit >= width ? `${width}px` : "100%"}
+        height={state.limit >= width ? `${height}px` : "100%"}
       >
         <Image
           responsive={false}
