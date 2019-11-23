@@ -35,7 +35,7 @@ const PAGE_QUERY = gql`
               medium: resized(width: 900, height: 900) {
                 ...Image
               }
-              large: resized(width: 1400, height: 1400) {
+              large: resized(width: 1440, height: 1440) {
                 ...Image
               }
             }
@@ -80,16 +80,15 @@ const Entity = styled.div<{ size?: string | null }>`
 `;
 
 export const Page: React.FC = () => {
-  const collectionId =
-    window.location.pathname.slice(1) || process.env.REACT_APP_COLLECTION_ID;
+  const [userId, collectionId] = window.location.pathname.slice(1).split("/");
 
   const { data, loading, error } = useQuery<PageQuery, PageQueryVariables>(
     PAGE_QUERY,
     {
       skip: !collectionId,
       variables: {
-        userId: `${process.env.REACT_APP_USER_ID}`,
-        collectionId: collectionId!
+        userId,
+        collectionId
       }
     }
   );
