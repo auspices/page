@@ -80,15 +80,18 @@ const Entity = styled.div<{ size?: string | null }>`
 `;
 
 export const Page: React.FC = () => {
-  const [userId, collectionId] = window.location.pathname.slice(1).split("/");
+  const [
+    userId = process.env.REACT_APP_USER_ID,
+    collectionId = process.env.REACT_APP_COLLECTION_ID
+  ] = window.location.pathname.slice(1).split("/");
 
   const { data, loading, error } = useQuery<PageQuery, PageQueryVariables>(
     PAGE_QUERY,
     {
-      skip: !collectionId,
+      skip: !collectionId && !userId,
       variables: {
-        userId,
-        collectionId
+        userId: userId!,
+        collectionId: collectionId!
       }
     }
   );
