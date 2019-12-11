@@ -20,6 +20,7 @@ const PAGE_QUERY = gql`
           id
           size: value(key: "size")
           caption: value(key: "caption")
+          treatment: value(key: "treatment")
           entity {
             __typename
             ... on Text {

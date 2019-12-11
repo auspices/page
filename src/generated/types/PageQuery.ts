@@ -69,6 +69,7 @@ export interface PageQuery_user_page_contents {
   id: number;
   size: string | null;
   caption: string | null;
+  treatment: string | null;
   entity: PageQuery_user_page_contents_entity;
 }
 

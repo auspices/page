@@ -6,12 +6,19 @@ import { useLazyValue } from "../../hooks/useLazyValue";
 
 type Status = "pending" | "ready";
 
-const ResponsiveContainer = styled(AspectRatioBox)`
+const ResponsiveContainer = styled(AspectRatioBox)<{
+  treatment?: string | null;
+}>`
   position: relative;
   display: inline-flex;
   background-size: cover;
   background-position: center center;
   background-color: lightgray;
+  ${({ treatment }) =>
+    treatment === "outline" &&
+    `
+      border: 1px solid lightgray;
+  `}
 `;
 
 const Img = styled.img<{ status: Status }>`
@@ -49,6 +56,7 @@ export interface Props {
   alt?: string;
   caption?: string;
   fallbackUrl?: string;
+  treatment?: string | null;
 }
 
 const PENDING_SRC = "//:0";
@@ -61,6 +69,7 @@ export const Image: React.FC<Props> = ({
   fallbackUrl,
   alt,
   caption,
+  treatment,
   ...rest
 }) => {
   const ref = useRef<HTMLImageElement>(null);
@@ -75,6 +84,7 @@ export const Image: React.FC<Props> = ({
       aspectWidth={width}
       maxHeight={height}
       maxWidth={width}
+      treatment={treatment}
       style={{
         ...(fallbackUrl ? { backgroundImage: `url(${fallbackUrl})` } : null)
       }}
