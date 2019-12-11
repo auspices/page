@@ -1,5 +1,5 @@
 import React, { useRef, useCallback, useState } from "react";
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 
 import { AspectRatioBox } from "../AspectRatioBox";
 import { useLazyValue } from "../../hooks/useLazyValue";
@@ -34,6 +34,33 @@ const Img = styled.img<{ status: Status }>`
     `
     opacity: 1;
   `}
+`;
+
+const pulse = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`;
+
+const StatusIndicator = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: white;
+  border-radius: 50%;
+  animation: ${pulse} 500ms infinite;
+  mix-blend-mode: difference;
 `;
 
 const Caption = styled.h4`
@@ -90,8 +117,8 @@ export const Image: React.FC<Props> = ({
       }}
       {...rest}
     >
+      {status === "pending" && <StatusIndicator />}
       {caption && <Caption>{caption}</Caption>}
-
       <Img
         status={status}
         ref={ref}
