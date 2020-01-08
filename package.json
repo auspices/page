@@ -42,12 +42,12 @@
     ]
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "1.11.1",
-    "@graphql-codegen/fragment-matcher": "1.11.1",
-    "@graphql-codegen/introspection": "1.11.1",
-    "@graphql-codegen/typescript": "1.11.1",
-    "@graphql-codegen/typescript-operations": "1.11.1",
-    "@graphql-codegen/typescript-react-apollo": "1.11.1",
+    "@graphql-codegen/cli": "1.11.2",
+    "@graphql-codegen/fragment-matcher": "1.11.2",
+    "@graphql-codegen/introspection": "1.11.2",
+    "@graphql-codegen/typescript": "1.11.2",
+    "@graphql-codegen/typescript-operations": "1.11.2",
+    "@graphql-codegen/typescript-react-apollo": "1.11.2",
     "@types/body-scroll-lock": "2.6.1",
     "@types/styled-components": "4.4.2",
     "apollo": "2.21.2"
