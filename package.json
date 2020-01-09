@@ -45,7 +45,7 @@
     "@graphql-codegen/cli": "1.11.2",
     "@graphql-codegen/fragment-matcher": "1.11.2",
     "@graphql-codegen/introspection": "1.11.2",
-    "@graphql-codegen/typescript": "1.11.2",
+    "@graphql-codegen/typescript": "1.11.2-alpha-d35ce840.0",
     "@graphql-codegen/typescript-operations": "1.11.2",
     "@graphql-codegen/typescript-react-apollo": "1.11.2",
     "@types/body-scroll-lock": "2.6.1",
