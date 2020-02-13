@@ -50,6 +50,6 @@
     "@graphql-codegen/typescript-react-apollo": "1.12.2",
     "@types/body-scroll-lock": "2.6.1",
     "@types/styled-components": "4.4.3",
-    "apollo": "2.22.0"
+    "apollo": "2.22.1"
   }
 }
