@@ -33,9 +33,13 @@
               }
             ],
             "type": {
-              "kind": "OBJECT",
-              "name": "Collection",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Collection",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -60,9 +64,13 @@
               }
             ],
             "type": {
-              "kind": "OBJECT",
-              "name": "Content",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Content",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -72,9 +80,13 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "OBJECT",
-              "name": "User",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "User",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -99,9 +111,13 @@
               }
             ],
             "type": {
-              "kind": "OBJECT",
-              "name": "User",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "User",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -173,15 +189,19 @@
               }
             ],
             "type": {
-              "kind": "LIST",
+              "kind": "NON_NULL",
               "name": null,
               "ofType": {
-                "kind": "NON_NULL",
+                "kind": "LIST",
                 "name": null,
                 "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Content",
-                  "ofType": null
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Content",
+                    "ofType": null
+                  }
                 }
               }
             },
@@ -305,15 +325,19 @@
               }
             ],
             "type": {
-              "kind": "LIST",
+              "kind": "NON_NULL",
               "name": null,
               "ofType": {
-                "kind": "NON_NULL",
+                "kind": "LIST",
                 "name": null,
                 "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Content",
-                  "ofType": null
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Content",
+                    "ofType": null
+                  }
                 }
               }
             },
@@ -431,7 +455,7 @@
       {
         "kind": "SCALAR",
         "name": "JSON",
-        "description": "Represents untyped JSON",
+        "description": null,
         "fields": null,
         "inputFields": null,
         "interfaces": null,
@@ -766,9 +790,13 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -841,9 +869,13 @@
               }
             ],
             "type": {
-              "kind": "OBJECT",
-              "name": "ResizedImage",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "ResizedImage",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -853,9 +885,13 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -918,9 +954,13 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -930,9 +970,13 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -963,9 +1007,13 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -1007,9 +1055,13 @@
             "description": "",
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -1397,9 +1449,13 @@
               }
             ],
             "type": {
-              "kind": "OBJECT",
-              "name": "Collection",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Collection",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -1430,15 +1486,19 @@
               }
             ],
             "type": {
-              "kind": "LIST",
+              "kind": "NON_NULL",
               "name": null,
               "ofType": {
-                "kind": "NON_NULL",
+                "kind": "LIST",
                 "name": null,
                 "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Collection",
-                  "ofType": null
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Collection",
+                    "ofType": null
+                  }
                 }
               }
             },
@@ -1593,15 +1653,19 @@
               }
             ],
             "type": {
-              "kind": "LIST",
+              "kind": "NON_NULL",
               "name": null,
               "ofType": {
-                "kind": "NON_NULL",
+                "kind": "LIST",
                 "name": null,
                 "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Content",
-                  "ofType": null
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Content",
+                    "ofType": null
+                  }
                 }
               }
             },
@@ -1985,12 +2049,12 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "AddToCollectionInput",
-        "description": "Autogenerated input type of AddToCollection",
+        "description": "",
         "fields": null,
         "inputFields": [
           {
             "name": "id",
-            "description": "Collection ID",
+            "description": "",
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -2004,7 +2068,7 @@
           },
           {
             "name": "value",
-            "description": "URL or plain text",
+            "description": "",
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -2028,7 +2092,7 @@
           },
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2044,11 +2108,11 @@
       {
         "kind": "OBJECT",
         "name": "AddToCollectionPayload",
-        "description": "Autogenerated return type of AddToCollection",
+        "description": "",
         "fields": [
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2115,7 +2179,7 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "CreateCollectionInput",
-        "description": "Autogenerated input type of CreateCollection",
+        "description": "",
         "fields": null,
         "inputFields": [
           {
@@ -2134,7 +2198,7 @@
           },
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2150,11 +2214,11 @@
       {
         "kind": "OBJECT",
         "name": "CreateCollectionPayload",
-        "description": "Autogenerated return type of CreateCollection",
+        "description": "",
         "fields": [
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2189,7 +2253,7 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "LoginInput",
-        "description": "Autogenerated input type of Login",
+        "description": "",
         "fields": null,
         "inputFields": [
           {
@@ -2222,7 +2286,7 @@
           },
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2238,11 +2302,11 @@
       {
         "kind": "OBJECT",
         "name": "LoginPayload",
-        "description": "Autogenerated return type of Login",
+        "description": "",
         "fields": [
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2293,7 +2357,7 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "RemoveFromCollectionInput",
-        "description": "Autogenerated input type of RemoveFromCollection",
+        "description": "",
         "fields": null,
         "inputFields": [
           {
@@ -2312,7 +2376,7 @@
           },
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2328,11 +2392,11 @@
       {
         "kind": "OBJECT",
         "name": "RemoveFromCollectionPayload",
-        "description": "Autogenerated return type of RemoveFromCollection",
+        "description": "",
         "fields": [
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2383,7 +2447,7 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "RepositionCollectionContentInput",
-        "description": "Autogenerated input type of RepositionCollectionContent",
+        "description": "",
         "fields": null,
         "inputFields": [
           {
@@ -2426,7 +2490,7 @@
           },
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2483,11 +2547,11 @@
       {
         "kind": "OBJECT",
         "name": "RepositionCollectionContentPayload",
-        "description": "Autogenerated return type of RepositionCollectionContent",
+        "description": "",
         "fields": [
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2538,7 +2602,7 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdateCollectionInput",
-        "description": "Autogenerated input type of UpdateCollection",
+        "description": "",
         "fields": null,
         "inputFields": [
           {
@@ -2587,7 +2651,7 @@
           },
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2603,11 +2667,11 @@
       {
         "kind": "OBJECT",
         "name": "UpdateCollectionPayload",
-        "description": "Autogenerated return type of UpdateCollection",
+        "description": "",
         "fields": [
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2642,7 +2706,7 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdateContentInput",
-        "description": "Autogenerated input type of UpdateContent",
+        "description": "",
         "fields": null,
         "inputFields": [
           {
@@ -2681,7 +2745,7 @@
           },
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2697,11 +2761,11 @@
       {
         "kind": "OBJECT",
         "name": "UpdateContentPayload",
-        "description": "Autogenerated return type of UpdateContent",
+        "description": "",
         "fields": [
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -2736,7 +2800,7 @@
       {
         "kind": "INPUT_OBJECT",
         "name": "UpdateEntityInput",
-        "description": "Autogenerated input type of UpdateEntity",
+        "description": "",
         "fields": null,
         "inputFields": [
           {
@@ -2769,7 +2833,7 @@
           },
           {
             "name": "value",
-            "description": "URL or plain text",
+            "description": "",
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -2783,7 +2847,7 @@
           },
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -2828,11 +2892,11 @@
       {
         "kind": "OBJECT",
         "name": "UpdateEntityPayload",
-        "description": "Autogenerated return type of UpdateEntity",
+        "description": "",
         "fields": [
           {
             "name": "clientMutationId",
-            "description": "A unique identifier for the client performing the mutation.",
+            "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",

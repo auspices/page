@@ -81,7 +81,7 @@ export interface Props {
     _2x: string;
   };
   alt?: string;
-  caption?: string;
+  caption?: string | null;
   fallbackUrl?: string;
   treatment?: string | null;
 }

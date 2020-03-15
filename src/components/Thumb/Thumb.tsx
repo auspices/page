@@ -3,9 +3,9 @@ import styled from "styled-components/macro";
 
 import { Image, Props as ImageProps } from "../Image";
 import { Modal } from "../Modal";
-import { Base as Button } from "../Button";
+import { Base } from "../Button";
 
-const Container = styled(Button)<{ width: string; height: string }>`
+const Container = styled(Base)<{ width: string; height: string }>`
   display: block;
   width: ${({ width }) => width};
   height: ${({ height }) => height};

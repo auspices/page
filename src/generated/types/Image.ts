@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+// @generated
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -14,7 +15,7 @@ export interface Image_urls {
 
 export interface Image {
   __typename: "ResizedImage";
-  height: number | null;
-  width: number | null;
+  height: number;
+  width: number;
   urls: Image_urls;
 }

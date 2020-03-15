@@ -32,15 +32,14 @@ export const Image: React.FC<Props> = ({ content, size }) => {
           width={image.width as number}
           height={image.height as number}
           urls={image.urls}
-          alt={content.caption!}
-          caption={content.caption!}
+          alt={content.caption || "Thumbnail"}
           treatment={content.treatment}
         >
           <Img
-            width={sizes.large!.width as number}
-            height={sizes.large!.height as number}
-            urls={sizes.large!.urls}
-            fallbackUrl={sizes.thumb!.urls._1x}
+            width={sizes.large.width as number}
+            height={sizes.large.height as number}
+            urls={sizes.large.urls}
+            fallbackUrl={sizes.thumb.urls._1x}
             treatment={content.treatment}
           />
         </Thumb>
@@ -50,9 +49,9 @@ export const Image: React.FC<Props> = ({ content, size }) => {
             width={image.width as number}
             height={image.height as number}
             urls={image.urls}
-            fallbackUrl={sizes.thumb!.urls._1x}
-            alt={content.caption!}
-            caption={content.caption!}
+            fallbackUrl={sizes.thumb.urls._1x}
+            alt={content.caption || ""}
+            caption={content.caption}
             treatment={content.treatment}
           />
         </>

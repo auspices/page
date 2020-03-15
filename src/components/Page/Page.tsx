@@ -100,18 +100,18 @@ export const Page: React.FC = () => {
   );
 
   useEffect(() => {
-    if (loading) {
-      document.title = "Loading";
-      return;
-    }
-
     if (error) {
       document.title = "Something went wrong";
       return;
     }
 
+    if (loading) {
+      document.title = "Loading";
+      return;
+    }
+
     document.title =
-      (data && (data.user!.page!.title || data.user!.page!._title)) || "—";
+      (data && (data.user.page.title || data.user.page._title)) || "—";
   }, [data, error, loading]);
 
   if (loading) return <Loading />;
@@ -126,41 +126,38 @@ export const Page: React.FC = () => {
     );
   }
 
-  const page = data.user!.page!;
+  const {
+    user: { page }
+  } = data;
 
   return (
     <Container>
-      {page.contents &&
-        page.contents.map(content => {
-          const { entity } = content;
+      {page.contents.map(content => {
+        const { entity } = content;
 
-          switch (entity.__typename) {
-            case "Image":
-              return (
-                <Entity key={content.id} size={content.size}>
-                  <Image
-                    key={content.id}
-                    content={content}
-                    size={content.size}
-                  />
-                </Entity>
-              );
-            case "Link":
-              return (
-                <Entity key={content.id}>
-                  <Link url={entity.url} />
-                </Entity>
-              );
-            case "Text":
-              return (
-                <Entity key={content.id}>
-                  <Text size={content.size} body={entity.body} />
-                </Entity>
-              );
-            default:
-              return null;
-          }
-        })}
+        switch (entity.__typename) {
+          case "Image":
+            return (
+              <Entity key={content.id} size={content.size}>
+                <Image key={content.id} content={content} size={content.size} />
+              </Entity>
+            );
+          case "Link":
+            return (
+              <Entity key={content.id}>
+                <Link url={entity.url} />
+              </Entity>
+            );
+          case "Text":
+            return (
+              <Entity key={content.id}>
+                <Text size={content.size} body={entity.body} />
+              </Entity>
+            );
+          default:
+            return null;
+        }
+      })}
     </Container>
   );
 };
