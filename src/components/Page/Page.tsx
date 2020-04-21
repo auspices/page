@@ -11,33 +11,35 @@ import { Image } from "../../entities/Image";
 import { Link } from "../../entities/Link";
 
 const PAGE_QUERY = gql`
-  query PageQuery($userId: ID!, $collectionId: ID!) {
-    user(id: $userId) {
-      page: collection(id: $collectionId) {
-        _title: title
-        title: value(key: "title")
-        contents(per: 99) {
-          id
-          size: value(key: "size")
-          caption: value(key: "caption")
-          treatment: value(key: "treatment")
-          entity {
-            __typename
-            ... on Text {
-              body
-            }
-            ... on Link {
-              url
-            }
-            ... on Image {
-              thumb: resized(width: 400, height: 400) {
-                ...Image
+  query PageQuery($collectionId: ID!) {
+    page: object {
+      ... on Collection {
+        collection(id: $collectionId) {
+          _title: title
+          title: value(key: "title")
+          contents(per: 99) {
+            id
+            size: value(key: "size")
+            caption: value(key: "caption")
+            treatment: value(key: "treatment")
+            entity {
+              __typename
+              ... on Text {
+                body
               }
-              medium: resized(width: 900, height: 900) {
-                ...Image
+              ... on Link {
+                url
               }
-              large: resized(width: 1440, height: 1440) {
-                ...Image
+              ... on Image {
+                thumb: resized(width: 400, height: 400) {
+                  ...Image
+                }
+                medium: resized(width: 900, height: 900) {
+                  ...Image
+                }
+                large: resized(width: 1440, height: 1440) {
+                  ...Image
+                }
               }
             }
           }
@@ -81,21 +83,16 @@ const Entity = styled.div<{ size?: string | null }>`
 `;
 
 export const Page: React.FC = () => {
-  const pathname = window.location.pathname.slice(1);
-
-  const [
-    userId = process.env.REACT_APP_USER_ID,
-    collectionId = process.env.REACT_APP_COLLECTION_ID
-  ] = pathname === "" ? [] : pathname.split("/");
+  const collectionId =
+    window.location.pathname.slice(1) ?? process.env.REACT_APP_COLLECTION_ID;
 
   const { data, loading, error } = useQuery<PageQuery, PageQueryVariables>(
     PAGE_QUERY,
     {
-      skip: !(collectionId && userId),
+      skip: !collectionId,
       variables: {
-        userId: userId!,
-        collectionId: collectionId!
-      }
+        collectionId: collectionId!,
+      },
     }
   );
 
@@ -111,7 +108,8 @@ export const Page: React.FC = () => {
     }
 
     document.title =
-      (data && (data.user.page.title || data.user.page._title)) || "—";
+      (data && (data.page.collection.title || data.page.collection._title)) ||
+      "—";
   }, [data, error, loading]);
 
   if (loading) return <Loading />;
@@ -127,12 +125,12 @@ export const Page: React.FC = () => {
   }
 
   const {
-    user: { page }
+    page: { collection },
   } = data;
 
   return (
     <Container>
-      {page.contents.map(content => {
+      {collection.contents.map((content) => {
         const { entity } = content;
 
         switch (entity.__typename) {

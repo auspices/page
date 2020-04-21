@@ -1,5 +1,5 @@
 overwrite: true
-schema: "https://atlas.auspic.es/graphql"
+schema: "https://atlas.auspic.es/graph/c6f08e6f-892e-4aef-869e-788163a2cafc"
 generates:
   src/generated/graphql.tsx:
     plugins:

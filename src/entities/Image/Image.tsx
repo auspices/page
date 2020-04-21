@@ -4,8 +4,8 @@ import { Image as Img } from "../../components/Image";
 import { Thumb } from "../../components/Thumb";
 
 import {
-  PageQuery_user_page_contents as Content,
-  PageQuery_user_page_contents_entity_Image as Entity
+  PageQuery_page_collection_contents as Content,
+  PageQuery_page_collection_contents_entity_Image as Entity,
 } from "../../generated/types/PageQuery";
 
 interface Props {
@@ -18,7 +18,7 @@ export const Image: React.FC<Props> = ({ content, size }) => {
   const sizes = {
     large: entity.large,
     medium: entity.medium,
-    thumb: entity.thumb
+    thumb: entity.thumb,
   };
 
   const image = sizes[(size || "medium") as keyof typeof sizes]!;
