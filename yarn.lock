@@ -3705,10 +3705,10 @@ body-parser@1.19.0:
     raw-body "2.4.0"
     type-is "~1.6.17"
 
-body-scroll-lock@2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-2.7.0.tgz#b76f16d89eb33ec0310d045a6e3f3c33837bfee4"
-  integrity sha512-k7Ld9YTMzuK6BGuJZQiG7pyE+BKDkZhJ2GkzVhpiCu1V6y/CKyyBdI2MOCvyvtNjhiavdHLcTlykWf/gcyaeEg==
+body-scroll-lock@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/body-scroll-lock/-/body-scroll-lock-3.0.1.tgz#bacb9ebf64fef2498392a3b779f4943af2004fad"
+  integrity sha512-BYcnBAv6r3iKFDeYgG3ZMiOtxHDcHaev84he4vU4nB062A9MSUHsbVkrgsiSZlGCcWqoqGKCKTytSUhzuEjiCQ==
 
 bonjour@^3.5.0:
   version "3.5.0"
@@ -10745,10 +10745,10 @@ prop-types@^15.6.2, prop-types@^15.7.2:
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
-proportional-scale@2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/proportional-scale/-/proportional-scale-2.1.1.tgz#3f68d19d1b3d42e25eb638458bcee8162d9970c4"
-  integrity sha512-1mpVn6+QyIjGl1OOOo2Q2iSzZzR6D3S22jev4w4vAlXID0AKpiufQNMn70A6WnbB8kSS+U2G/L6YS9YMiROPqw==
+proportional-scale@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/proportional-scale/-/proportional-scale-3.0.0.tgz#0dd18547b596d2bcb14479b5c48e9184c976ddd4"
+  integrity sha512-nkjqoDTsfYfmVksCDK5I0nK+0endS0Cgh1CMcN91E2Oj364m/RTFT7aVf9jUT17b9/0W/5tTL1r2Yj+3yAzTwA==
 
 proxy-addr@~2.0.5:
   version "2.0.6"
