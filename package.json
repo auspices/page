@@ -8,7 +8,7 @@
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
     "apollo-boost": "0.4.9",
-    "body-scroll-lock": "3.0.2",
+    "body-scroll-lock": "3.0.3",
     "graphql": "14.6.0",
     "proportional-scale": "3.0.0",
     "react": "16.13.1",
