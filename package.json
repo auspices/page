@@ -47,7 +47,7 @@
     "@graphql-codegen/introspection": "1.17.8",
     "@graphql-codegen/typescript": "1.17.8",
     "@graphql-codegen/typescript-operations": "1.17.8",
-    "@graphql-codegen/typescript-react-apollo": "1.17.7",
+    "@graphql-codegen/typescript-react-apollo": "2.0.6",
     "@types/body-scroll-lock": "2.6.1",
     "@types/styled-components": "5.1.2",
     "apollo": "2.30.2"
