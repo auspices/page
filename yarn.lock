@@ -2839,10 +2839,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@16.14.21":
-  version "16.14.21"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.21.tgz#35199b21a278355ec7a3c40003bd6a334bd4ae4a"
-  integrity sha512-rY4DzPKK/4aohyWiDRHS2fotN5rhBSK6/rz1X37KzNna9HJyqtaGAbq9fVttrEPWF5ywpfIP1ITL8Xi2QZn6Eg==
+"@types/react@16.14.34":
+  version "16.14.34"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.34.tgz#d129324ffda312044e1c47aab18696e4ed493282"
+  integrity sha512-b99nWeGGReLh6aKBppghVqp93dFJtgtDOzc8NXM6hewD8PQ2zZG5kBLgbx+VJr7Q7WBMjHxaIl3dwpwwPIUgyA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
